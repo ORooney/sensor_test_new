@@ -28,13 +28,8 @@ $(document).on("pagecreate", "#page1", function () {
 		
 		
 		//the value from the slider is text - it needs to be turned into an integer
-		//var freq = parseInt($(this).val());
-
-		var freq = $('#slider').val();
-
-		var praseFreq = parseInt(freq);
-		
-		updateFreq(praseFreq);
+		var freq = parseInt($(this).val());
+		updateFreq(freq);
 	
 	});
 
@@ -73,7 +68,10 @@ function accelerometerError() {
 }
 
 function updateFreq(freq) {
-	//do something to update freq. here.
+	
+	accelerometerOptions.frequency = freq;
+
+
 }
 
 
