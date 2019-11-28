@@ -21,11 +21,6 @@ $(document).on("pagecreate", "#page1", function () {
 
 		}
 
-
-
-		/*if( $(this).val() == "on" ) startSensor();
-		else if ( $(this).val() == "off" ) stopSensor();
-		*/
 	});
 	
 	//setup listener for the slider
@@ -33,9 +28,13 @@ $(document).on("pagecreate", "#page1", function () {
 		
 		
 		//the value from the slider is text - it needs to be turned into an integer
-		var freq = parseInt($(this).val());
+		//var freq = parseInt($(this).val());
+
+		var freq = $('#slider').val();
+
+		var praseFreq = parseInt(freq);
 		
-		updateFreq(freq);
+		updateFreq(praseFreq);
 	
 	});
 
@@ -64,6 +63,8 @@ function accelerometerSuccess(acceleration) {
 	$('#sensorY').val(acceleration.y);
 	$('#sensorZ').val(acceleration.z);
 	$('#timestamp').val(acceleration.timestamp);
+	$('#gravity').val(acceleration.)
+
 
 }
 
