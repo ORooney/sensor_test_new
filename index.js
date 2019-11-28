@@ -6,12 +6,26 @@ accelerometerOptions.frequency = 3000; //changed my mind - now 3 seconds
 //when the page is created...
 $(document).on("pagecreate", "#page1", function () {
 	
-	//setup listener for the toggle switch
+
+	
+	//Setup listener for the toggle switch
 	$("#flipswitch").on("change", function() {
 		
-		if( $(this).val() == "on" ) startSensor();
-		else if ( $(this).val() == "off" ) stopSensor();
+		if($("#flipswitch").val() == "on"){
 
+			startSensor();
+
+		}else if($("#flipswitch").val() == "off"){
+
+			stopSensor();
+
+		}
+
+
+
+		/*if( $(this).val() == "on" ) startSensor();
+		else if ( $(this).val() == "off" ) stopSensor();
+		*/
 	});
 	
 	//setup listener for the slider
@@ -24,7 +38,9 @@ $(document).on("pagecreate", "#page1", function () {
 		updateFreq(freq);
 	
 	});
-	
+
+
+
 });
 
 
